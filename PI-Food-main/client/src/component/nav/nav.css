@@ -1,0 +1,15 @@
+.contenedor-nav{
+  background-color: rgb(47, 192, 42);
+  height: 16%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 2.5%;
+  z-index: 1;
+  border-radius: 25%;
+  box-shadow: 1vh 2vh 3vh rgba(0,0,0,0.75);
+  font-size: 2vh;
+}
