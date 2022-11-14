@@ -108,141 +108,164 @@
 return (
   <div className="contenedor-home">
     <div className="div-nav">
-    <Nav/>
+      {/* <Nav /> */}
     </div>
     <h1 className="title-home">Home</h1>
-      <Searchbar/>
-      <div>
-        <label>Ordenar por: A - Z</label>
-        <select onChange={handleOrderAlphabetical}>
-          <option value={"A-Z"}> A - Z</option>
-          <option value={"Z-A"}> Z - A</option>
-        </select>
-      </div>
-        <label>Ordenar por: healt Score</label>
-        <select onChange={handleOrderHealthScore}>
-          <option value={"Max"}>Max</option>
-          <option value={"Min"}>Min</option>
-        </select>
-      <button onClick={nextPage} >Next</button>
-      &nbsp;
-      <button onClick={prevPage}>Previous</button>
-      <div>
-          <h2>Diets types</h2>
-          <label>Gluten free:</label>
-          <input 
-                type="checkbox" 
-                onChange={handleOrderDietTypes}
-                name="gluten free"
-                value="gluten free"
-          />
-          <label>Ketogenic:</label>
-          <input 
-                type="checkbox"
-                onChange={handleOrderDietTypes}
-                name="ketogenic"
-                value="ketogenic"
-          />
-          <label>Vegetarian:</label>
-          <input 
-                type="checkbox"
-                onChange={handleOrderDietTypes}
-                name="vegetarian"
-                value="vegetarian"
-          />
-          <label>Lacto vegetarian:</label>
-          <input 
-                type="checkbox"
-                onChange={handleOrderDietTypes}
-                name="lacto vegetarian"
-                value="lacto vegetarian"
-          />
-          <label>Ovo vegetarian:</label>
-          <input 
-                type="checkbox" 
-                onChange={handleOrderDietTypes}
-                name="ovo vegetarian"
-                value="ovo vegetarian"
-          />
-          <label>Lacto ovo vegetarian:</label>
-          <input 
-                type="checkbox" 
-                onChange={handleOrderDietTypes}
-                name="lacto ovo vegetarian"
-                value="lacto ovo vegetarian"
-          />
-          <label>Vegan:</label>
-          <input 
-                type="checkbox" 
-                onChange={handleOrderDietTypes}
-                name="vegan"
-                value="vegan"
-          />
-          <label>Pescetarian:</label>
-          <input 
-                type="checkbox" 
-                onChange={handleOrderDietTypes}
-                name="pescetarian"
-                value="pescetarian"
-          />
-          <label>Paleolithic:</label>
-          <input 
-                type="checkbox" 
-                onChange={handleOrderDietTypes}
-                name="paleolithic"
-                value="paleolithic"
-          />
-          <label>Primal:</label>
-          <input 
-                type="checkbox"
-                onChange={handleOrderDietTypes}
-                name="primal"
-                value="primal"
-          />
-          <label>Low fodmap:</label>
-          <input 
-                type="checkbox" 
-                onChange={handleOrderDietTypes}
-                name="low fodmap"
-                value="low fodmap"
-          />
-          <label>Whole 30:</label>
-          <input 
-                type="checkbox" 
-                onChange={handleOrderDietTypes}
-                name="whole 30"
-                value="whole 30"
-          />
-          <label>Dairy free:</label>
-          <input 
-                type="checkbox" 
-                onChange={handleOrderDietTypes}
-                name="dairy free"
-                value="dairy free"
-                />
+    <Searchbar />
+    <div className="ContenedorFiltros"> 
+        
+
+        <div className="ordenArtz">
+          <label>Ordenar por: A - Z
+          <select onChange={handleOrderAlphabetical}>
+            <option value={"A-Z"}> A - Z</option>
+            <option value={"Z-A"}> Z - A</option>
+          </select>
+          </label>
         </div>
-
-
-    <div className="contenedor-recipes" >
-      {ListaRecipes.map(recipe => {
-        return (
-          <div className="recipes">        
-          <Recipes
-          key={recipe.id}
-          name={recipe.name}
-          id={recipe.id }
-          image={recipe.image}
-          healthScore={recipe.healthScore}
-          dietTypes={recipe.dietTypes?.map(dietTypes => dietTypes)}
-        />
-      </div>
-
-      )})}
-      
-
+        <div className="ordenMinMax">
+          <label>Ordenar por: healt Score
+          <select onChange={handleOrderHealthScore}>
+            <option value={"Max"}>Max</option>
+            <option value={"Min"}>Min</option>
+          </select>
+          </label>
+        </div>
+        <div className="dietTypes">
+          <h2>Diets types</h2>
+          <label>Gluten free:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="gluten free"
+            value="gluten free"
+          />
+          </label>
+          <label>Ketogenic:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="ketogenic"
+            value="ketogenic"
+          />
+          </label>
+          <label>Vegetarian:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="vegetarian"
+            value="vegetarian"
+          />
+          </label>
+          <label>Lacto vegetarian:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="lacto vegetarian"
+            value="lacto vegetarian"
+          />
+          </label>
+          <label>Ovo vegetarian:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="ovo vegetarian"
+            value="ovo vegetarian"
+          />
+          </label>
+          <label>Lacto ovo vegetarian:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="lacto ovo vegetarian"
+            value="lacto ovo vegetarian"
+          />
+          </label>
+          <label>Vegan:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="vegan"
+            value="vegan"
+          />
+          </label>
+          <label>Pescetarian:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="pescetarian"
+            value="pescetarian"
+          />
+          </label>
+          <label>Paleolithic:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="paleolithic"
+            value="paleolithic"
+          />
+          </label>
+          <label>Primal:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="primal"
+            value="primal"
+          />
+          </label>
+          <label>Low fodmap:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="low fodmap"
+            value="low fodmap"
+          />
+          </label>
+          <label>Whole 30:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="whole 30"
+            value="whole 30"
+          />
+          </label>
+          <label>Dairy free:
+          <input
+            type="checkbox"
+            onChange={handleOrderDietTypes}
+            name="dairy free"
+            value="dairy free"
+          />
+          </label>
+        </div>
     </div>
-      
-    
+    <div>
+      <button onClick={nextPage}>Next</button>
+
+      <button onClick={prevPage}>Previous</button>
+    </div>
+
+    <div className="contenedor-recipes">
+      {ListaRecipes.map((recipe) => {
+        return (
+          <div key={recipe.id} className="recipes">
+            <Recipes
+              key={recipe.id}
+              name={recipe.name}
+              id={recipe.id}
+              image={recipe.image}
+              healthScore={recipe.healthScore}
+              dietTypes={recipe.dietTypes?.map((dietTypes) => dietTypes)}
+            />
+          </div>
+        );
+      })}
+    </div>
+    <div>
+      <button onClick={nextPage}>Next</button>
+
+      <button onClick={prevPage}>Previous</button>
+    </div>
   </div>
 );
 

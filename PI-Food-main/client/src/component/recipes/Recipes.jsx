@@ -17,19 +17,19 @@ export  default function Recipes(recipes) {
               src={image} 
               alt={name}/>
       </Link>
-      <div>
+      <div >
         <h2>healthScore</h2>
         <p>{healthScore}</p>
       </div>
 
-      <div>
+      <div >
         <h2>DietType</h2>
 
-        <>{dietTypes.map
+        <div>{dietTypes.map
           (dietType => {
             return <li key={dietType.id} >{dietType}</li>
           }
-        )}</>
+        )}</div>
 
         
         

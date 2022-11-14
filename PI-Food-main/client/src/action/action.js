@@ -1,5 +1,5 @@
 // import { LOCAL_HOST } from "./index";
-import { GET_RECIPES, GET_RECIPE_BY_ID,GET_RECIPES_BY_NAME, ALPHABETICAL_SORT,ORDER_HEALT_SCORE,DIET_TYPE_FILTER,RESET } from "../action/index.js";
+import { GET_RECIPES, GET_RECIPE_BY_ID,GET_RECIPES_BY_NAME, ALPHABETICAL_SORT,ORDER_HEALT_SCORE,DIET_TYPE_FILTER,RESET,GET_RECIPES_MAYOR_70 } from "../action/index.js";
 import axios from "axios";
 
 
@@ -37,17 +37,31 @@ export function postRecipe(newRecipe){
   }
 }
 
-export function  getRecipeByName(name){
-  return async function(dispatch) {
-    try{
-      const response = await axios.get(`http://localhost:3001/recipes?name=${name}`)
-      return dispatch({type: GET_RECIPES_BY_NAME, payload: response.data})
-    }catch(error){
-      console.log(error)
-    }
 
-  }
-}
+// export function  getRecipeByName(name){
+//   return async function(dispatch) {
+//     try{
+//       const response = await axios.get(`http://localhost:3001/recipes?name=${name}`)
+//       return dispatch({type: GET_RECIPES_BY_NAME, payload: response.data})
+//     }catch(error){
+//       console.log(error)
+//     }
+
+//   }
+// }
+
+export function getRecipeByName(name){
+ return function(dispatch) {
+   axios.get(`http://localhost:3001/recipes?name=${name}`)
+    .then((response) => {
+    return dispatch({type: GET_RECIPES_BY_NAME, payload: response.data})
+    }).catch((error) => {
+    console.log(error)})}}
+
+
+
+
+
 
 export function alphabetialSort(payload){
   return {
@@ -74,6 +88,13 @@ export function actionFilterDietTypes(payload) {
 export function reset (payload) {
   return {
     type: RESET,
+    payload:{}
+  }
+}
+
+export function getAllRecipesMayor70 (payload){
+  return {
+    type: GET_RECIPES_MAYOR_70,
     payload
   }
 }

@@ -6,6 +6,7 @@ import { ALPHABETICAL_SORT } from '../action/index.js';
 import { ORDER_HEALT_SCORE } from '../action/index.js';
 import { DIET_TYPE_FILTER } from '../action/index.js';
 import { RESET } from '../action/index.js';
+import { GET_RECIPES_MAYOR_70 } from '../action/index.js';
 // import Recipes from '../component/recipes/Recipes.jsx';
 
 const initialState = {
@@ -105,10 +106,15 @@ export default function rootReducer(state = initialState, action) {
             ...state,
             recipes: result
           }
-
           
-
         }
+      case GET_RECIPES_MAYOR_70:
+        console.log(action.payload)
+         return{
+
+         }
+
+
       case RESET:
         if(action.payload === 'reset'){
         return {

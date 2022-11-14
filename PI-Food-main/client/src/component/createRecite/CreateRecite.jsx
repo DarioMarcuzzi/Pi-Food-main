@@ -15,6 +15,7 @@ export default function CreateRecipe (){
   const [listSteps, setListSteps] = useState([]);
   const [stepsDescripcion, setStepsDescripcion] = useState('');
   const [dietTypes, setDietTypes] = useState([]);
+  const dispatch = useDispatch();
   
   const [newRecipe, setNewRecipe] = useState({
     name: '',
@@ -25,7 +26,6 @@ export default function CreateRecipe (){
   });
   
   
-  const dispatch = useDispatch();
   
   
   useEffect(() => {
@@ -81,20 +81,18 @@ const  updateRecipe = async (e) => {
   
   if(newRecipe.name.length > 4 && newRecipe.summary.length > 50 && newRecipe.summary.length < 100 && newRecipe.healthScore > 0 && newRecipe.healthScore < 10 && listSteps.length > 0) {
     
-      
-    
     dispatch(postRecipe(newRecipe));
     setNewRecipe({
-      name: '',
-      summary: '',
+      name: "",
+      summary: "",
       healthScore: 0,
-      steps: '',
+      steps: "",
       dietTypes: [],
     });
     setStep(1);
-    
-    console.log(newRecipe);
 
+    console.log(newRecipe);
+    alert("Receta creada con exito");
   }
   else {
     alert("Please fill in the form correctly");

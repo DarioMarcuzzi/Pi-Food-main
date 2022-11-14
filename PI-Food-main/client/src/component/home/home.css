@@ -1,4 +1,8 @@
 .contenedor-home{
+  background-image: url(../../img/dark-brown-wood-table.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,8 +11,49 @@
 .title-home{
   display: flex;
   margin-top: 20vh;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 5vh;
+}
+
+.ContenedorFiltros
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.dietTypes{
+  background-color: rgb(70, 70, 70);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -80%;
+
+  
+}
+
+.ordenArtz{
+  background-color: rgb(70, 70, 70);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -80%;
+}
+.ordenMinMax{
+  background-color: rgb(70, 70, 70);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -80%;
+
 }
 .contenedor-recipes {
   display: flex;

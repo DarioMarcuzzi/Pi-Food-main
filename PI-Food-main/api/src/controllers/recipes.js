@@ -72,6 +72,31 @@ router.post('/create', async (req, res) => {
   
 } );
 
+// router.put('/:id', async (req, res) => {
+//   try{
+//     const { id } = req.params;
+//     const { name, image, dietTypes, summary, healthScore, steps } = req.body;
+//     const recipe = await Recipe.findByPk(id);
+//     if(!recipe){
+//       return res.status(400).send('No se encontro la receta');
+//     }
+//     recipe.name = name;
+//     recipe.image = image;
+//     recipe.summary = summary;
+//     recipe.healthScore = healthScore;
+//     recipe.steps = steps;
+//     await recipe.save();
+//     let dietsDB = await Diet.findAll({ where: { name: dietTypes } });
+//     recipe.addDiets(dietsDB);
+//     res.status(200).send('Receta actualizada');
+  
+
+//   }
+//   catch(error){
+//     console.log(error);
+//   }
+// } );
+
 
 
 
